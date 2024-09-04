@@ -60,6 +60,7 @@
 }
 
 @layer utilities {
+  /* TYPOGRAPHY */
   .heading-lg {
     font-size: 2rem;
     letter-spacing: -0.5px;
@@ -94,5 +95,10 @@
     font-size: 0.8125rem;
     letter-spacing: 0px;
     font-weight: 300;
+  }
+
+  /* SCROLLBAR */
+  .custom-scroll-bar {
+    scrollbar-color: #5A698F #161D2F;
   }
 }

@@ -15,6 +15,10 @@ export default {
       'outline': '#5A698F',
       'error': '#FC4747',
     },
+    screens: {
+      md: { max: '768px' },
+      sm: { max: '640px' },
+    },
     extend: {},
   },
   plugins: [],
