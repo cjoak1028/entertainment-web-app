@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import BookmarkButton from "./BookmarkButton.jsx";
+import ContentLabel from "./ContentLabel.jsx";
 
 const TrendingContent = ({ contentData }) => {
   const trendingData = useMemo(() => {
@@ -21,16 +22,24 @@ const TrendingContent = ({ contentData }) => {
 };
 
 const Content = ({ info }) => {
+  const { year, category, rating, title, thumbnail } = info;
+
   return (
     <div
-      className="w-[29.375rem] h-[14.375rem] bg-cover bg-center rounded-lg p-6"
+      className="w-[29.375rem] h-[14.375rem] bg-cover bg-center rounded-lg p-6 pt-4 flex flex-col justify-between"
       style={{
-        backgroundImage: `url(${info.thumbnail.trending.large})`,
+        backgroundImage: `url(${thumbnail.trending.large})`,
       }}
     >
       <div className="flex flex-row justify-end">
         <BookmarkButton />
       </div>
+      <ContentLabel
+        year={year}
+        category={category}
+        rating={rating}
+        title={title}
+      />
     </div>
   );
 };
