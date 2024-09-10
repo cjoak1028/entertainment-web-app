@@ -10,7 +10,7 @@ const TrendingContent = ({ contentData }) => {
   return (
     <div>
       <h2 className="heading-lg mb-6">Trending</h2>
-      <ul className="flex flex-row overflow-x-scroll gap-10">
+      <ul className="flex flex-row overflow-x-scroll">
         {trendingData.map((contentInfo, index) => (
           <li key={index}>
             <Content info={contentInfo} />
@@ -26,7 +26,7 @@ const Content = ({ info }) => {
 
   return (
     <div
-      className="w-[29.375rem] h-[14.375rem] bg-cover bg-center rounded-lg p-6 pt-4 flex flex-col justify-between"
+      className="w-[29.375rem] h-[14.375rem] bg-cover bg-center rounded-lg p-6 pt-4 flex flex-col justify-between mr-10"
       style={{
         backgroundImage: `url(${thumbnail.trending.large})`,
       }}
