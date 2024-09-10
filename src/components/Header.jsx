@@ -1,9 +1,9 @@
-import logo from "../assets/logo.svg";
-import homeIcon from "../assets/icon-nav-home.svg";
-import moviesIcon from "../assets/icon-nav-movies.svg";
-import tvIcon from "../assets/icon-nav-tv-series.svg";
-import bookmarkIcon from "../assets/icon-nav-bookmark.svg";
-import avatar from "../assets/image-avatar.png";
+import logo from "/assets/logo.svg";
+import homeIcon from "/assets/icon-nav-home.svg";
+import moviesIcon from "/assets/icon-nav-movies.svg";
+import tvIcon from "/assets/icon-nav-tv-series.svg";
+import bookmarkIcon from "/assets/icon-nav-bookmark.svg";
+import avatar from "/assets/image-avatar.png";
 
 const Header = () => {
   return (
