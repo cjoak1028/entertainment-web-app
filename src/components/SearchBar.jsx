@@ -1,10 +1,10 @@
-import searchIcon from "../assets/icon-search.svg";
+import searchIcon from "/assets/icon-search.svg";
 
 const SearchBar = () => {
   return (
     <div
       className={
-        "bg-surface-container flex flex-row items-center gap-6 pr-9 md:px-6 sm:px-4 sm:py-6 sm:gap-4"
+        "bg-surface-container flex flex-row items-center gap-6 pr-9 mb-5 md:px-6 sm:px-4 sm:py-6 sm:gap-4"
       }
     >
       <button>
