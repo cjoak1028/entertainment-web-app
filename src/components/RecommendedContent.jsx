@@ -7,7 +7,7 @@ const RecommendedContent = ({ contentData }) => {
     return contentData?.filter((content) => !content.isTrending) || [];
   }, [contentData]);
   return (
-    <div className="mb-10 mr-8">
+    <div className="mr-8">
       <h2 className="heading-lg mb-8 sm:mb-4">Recommended for you</h2>
       <ul className="grid grid-cols-4 gap-x-10 gap-y-8">
         {recommendedData.map((contentInfo, index) => (
