@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import TrendingContent from "./components/TrendingContent";
+import RecommendedContent from "./components/RecommendedContent";
 
 function App() {
   const [contentData, setContentData] = useState([]);
@@ -33,6 +34,7 @@ function App() {
       <main className="flex-1 md:pt-0 overflow-y-auto custom-scroll-bar -mr-8 sm:-mr-4">
         <SearchBar />
         <TrendingContent contentData={contentData} />
+        <RecommendedContent contentData={contentData} />
       </main>
     </div>
   );
