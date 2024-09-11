@@ -7,8 +7,8 @@ import avatar from "/assets/image-avatar.png";
 
 const Header = () => {
   return (
-    <header className="p-8 h-screen min-h-[37.5rem] md:p-6 md:h-fit md:min-h-0 sm:p-0">
-      <div className="h-full w-24 bg-container rounded-[20px] flex flex-col items-center py-8 gap-[4.7rem] md:flex-row md:h-fit md:w-full md:p-5 md:justify-between md:gap-0 sm:p-4">
+    <header className="h-full min-h-[37.5rem] md:h-fit md:min-h-0 sm:w-screen sm:-ml-[1rem]">
+      <div className="h-full w-24 bg-container rounded-[20px] sm:rounded-none flex flex-col items-center gap-[4.7rem] md:flex-row md:h-fit md:w-full md:p-5 md:justify-between md:gap-0 sm:p-4 py-8">
         <img src={logo} className="w-8 sm:w-6" />
         <nav>
           <ul className="flex flex-col items-center gap-10 md:flex-row md:gap-8 sm:gap-6">
