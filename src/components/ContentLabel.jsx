@@ -4,7 +4,7 @@ import TvIcon from "/assets/icon-category-tv.svg";
 const ContentLabel = ({ year, category, rating, title }) => {
   return (
     <div>
-      <p className="body-md opacity-75 mb-3 flex">
+      <p className="body-md opacity-75 mb-3 sm:mb-2 flex">
         <span>{year}</span>
         <DotSeparator />
         <span className="flex items-center">

@@ -28,9 +28,9 @@ function App() {
   }, []);
 
   return (
-    <div className="flex flex-row bg-surface h-screen md:flex-col">
+    <div className="flex flex-row bg-surface h-screen md:flex-col p-8 md:p-6 sm:p-0 gap-9 md:gap-[0.375rem] sm:px-4 overflow-x-visible">
       <Header />
-      <main className="flex-1 py-16 md:pt-0 overflow-auto custom-scroll-bar">
+      <main className="flex-1 md:pt-0 overflow-y-auto custom-scroll-bar overflow-x-visible">
         <SearchBar />
         <TrendingContent contentData={contentData} />
       </main>
