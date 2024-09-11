@@ -4,7 +4,7 @@ const SearchBar = () => {
   return (
     <div
       className={
-        "bg-surface-container flex flex-row items-center gap-6 sm:gap-4 mb-5 mt-3"
+        "bg-surface-container flex flex-row items-center gap-6 sm:gap-4 mb-5 mt-3 mr-8 sm:mr-4"
       }
     >
       <button>
