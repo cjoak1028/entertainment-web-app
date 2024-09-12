@@ -35,6 +35,7 @@ const Content = ({ info }) => {
         <BookmarkButton />
       </div>
       <ContentLabel
+        isGrid={false}
         year={year}
         category={category}
         rating={rating}

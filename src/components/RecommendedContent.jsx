@@ -36,6 +36,7 @@ const Content = ({ info }) => {
         </div>
       </div>
       <ContentLabel
+        isGrid={true}
         year={year}
         category={category}
         rating={rating}

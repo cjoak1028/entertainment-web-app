@@ -16,7 +16,7 @@ export default {
       'error': '#FC4747',
     },
     screens: {
-      md: { max: '768px' },
+      md: { max: '960px' },
       sm: { max: '640px' },
     },
     extend: {},
