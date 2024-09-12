@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import BookmarkButton from "./BookmarkButton.jsx";
 import ContentLabel from "./ContentLabel.jsx";
+import ContentSection from "./ContentSection.jsx";
 
 const TrendingContent = ({ contentData }) => {
   const trendingData = useMemo(() => {
@@ -8,8 +9,7 @@ const TrendingContent = ({ contentData }) => {
   }, [contentData]);
 
   return (
-    <section className="px-9 md:px-6 sm:px-4 py-5 sm:py-3">
-      <h2 className="heading-lg mb-8 sm:mb-4">Trending</h2>
+    <ContentSection title="Trending">
       <ul className="flex flex-row overflow-x-auto gap-10 sm:gap-4 -mr-9 md:-mr-6 sm:-mr-4">
         {trendingData.map((contentInfo, index) => (
           <li key={index}>
@@ -17,7 +17,7 @@ const TrendingContent = ({ contentData }) => {
           </li>
         ))}
       </ul>
-    </section>
+    </ContentSection>
   );
 };
 

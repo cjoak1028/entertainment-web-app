@@ -1,14 +1,14 @@
 import { useMemo } from "react";
 import BookmarkButton from "./BookmarkButton.jsx";
 import ContentLabel from "./ContentLabel.jsx";
+import ContentSection from "./ContentSection.jsx";
 
 const RecommendedContent = ({ contentData }) => {
   const recommendedData = useMemo(() => {
     return contentData?.filter((content) => !content.isTrending) || [];
   }, [contentData]);
   return (
-    <section className="px-9 md:px-6 sm:px-4 py-5 sm:py-3">
-      <h2 className="heading-lg mb-8 sm:mb-4">Recommended for you</h2>
+    <ContentSection title="Recommended for you">
       <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-10 md:gap-x-7 sm:gap-x-4 gap-y-8 md:gap-y-6 sm:gap-y-4">
         {recommendedData.map((contentInfo, index) => (
           <li key={index}>
@@ -16,7 +16,7 @@ const RecommendedContent = ({ contentData }) => {
           </li>
         ))}
       </ul>
-    </section>
+    </ContentSection>
   );
 };
 
