@@ -7,7 +7,7 @@ import avatar from "/assets/image-avatar.png";
 
 const Header = () => {
   return (
-    <header className="h-full min-h-[37.5rem] md:h-fit md:min-h-0 sm:w-screen sm:-ml-[1rem]">
+    <header className="h-full min-h-[37.5rem] md:h-fit md:min-h-0 sm:w-screen py-7 pl-8 md:p-6 md:pb-0 sm:p-0">
       <div className="h-full w-24 bg-container rounded-[20px] sm:rounded-none flex flex-col items-center gap-[4.7rem] md:flex-row md:h-fit md:w-full md:p-5 md:justify-between md:gap-0 sm:p-4 py-8">
         <img src={logo} className="w-8 sm:w-6" />
         <nav>

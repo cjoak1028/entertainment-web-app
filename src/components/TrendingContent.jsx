@@ -8,16 +8,16 @@ const TrendingContent = ({ contentData }) => {
   }, [contentData]);
 
   return (
-    <div className="mb-10">
-      <h2 className="heading-lg mb-8 sm:mb-4 mr-8 sm:mr-4">Trending</h2>
-      <ul className="flex flex-row overflow-x-auto gap-10 sm:gap-4">
+    <section className="px-9 md:px-6 sm:px-4 py-5 sm:py-3">
+      <h2 className="heading-lg mb-8 sm:mb-4">Trending</h2>
+      <ul className="flex flex-row overflow-x-auto gap-10 sm:gap-4 -mr-9 md:-mr-6 sm:-mr-4">
         {trendingData.map((contentInfo, index) => (
           <li key={index}>
             <Content info={contentInfo} />
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };
 

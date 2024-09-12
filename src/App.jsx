@@ -29,9 +29,9 @@ function App() {
   }, []);
 
   return (
-    <div className="flex flex-row bg-surface h-screen md:flex-col p-8 md:p-6 sm:p-0 gap-9 md:gap-[0.375rem] sm:px-4">
+    <div className="flex flex-row bg-surface h-screen md:flex-col">
       <Header />
-      <main className="flex-1 md:pt-0 overflow-y-auto custom-scroll-bar -mr-8 sm:-mr-4">
+      <main className="flex-1 overflow-y-auto custom-scroll-bar py-7 md:py-0 md:pb-4">
         <SearchBar />
         <TrendingContent contentData={contentData} />
         <RecommendedContent contentData={contentData} />
