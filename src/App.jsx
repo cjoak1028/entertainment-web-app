@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Home from "./pages/Home.jsx";
 import Movies from "./pages/Movies.jsx";
 import TVSeries from "./pages/TVSeries.jsx";
+import Bookmarks from "./pages/Bookmarks.jsx";
 
 function App() {
   const [contentData, setContentData] = useState([]);
@@ -40,6 +41,10 @@ function App() {
             element={<Movies contentData={contentData} />}
           />
           <Route path="/tv" element={<TVSeries contentData={contentData} />} />
+          <Route
+            path="/bookmarks"
+            element={<Bookmarks contentData={contentData} />}
+          />
         </Routes>
       </main>
     </div>
