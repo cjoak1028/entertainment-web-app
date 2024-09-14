@@ -1,18 +1,20 @@
 import { useMemo } from "react";
 import SearchBar from "../components/SearchBar.jsx";
-import ContentSection from "../components/ContentSection.jsx";
-import ContentGrid from "../components/ContentGrid.jsx";
+import ContentGridSection from "../components/ContentGridSection.jsx";
 
 const Movies = ({ contentData }) => {
   const moviesData = useMemo(() => {
     return contentData?.filter((content) => content.category === "Movie") || [];
   }, [contentData]);
+
+  const MoviesContent = () => {
+    return <ContentGridSection title="Movies" contentData={moviesData} />;
+  };
+
   return (
     <>
       <SearchBar />
-      <ContentSection title="Movies">
-        <ContentGrid contentData={moviesData} />
-      </ContentSection>
+      <MoviesContent />
     </>
   );
 };

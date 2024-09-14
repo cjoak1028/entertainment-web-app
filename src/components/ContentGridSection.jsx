@@ -1,16 +1,12 @@
-import { useMemo } from "react";
+import ContentSection from "./ContentSection.jsx";
 import BookmarkButton from "./BookmarkButton.jsx";
 import ContentLabel from "./ContentLabel.jsx";
-import ContentSection from "./ContentSection.jsx";
 
-const RecommendedContent = ({ contentData }) => {
-  const recommendedData = useMemo(() => {
-    return contentData?.filter((content) => !content.isTrending) || [];
-  }, [contentData]);
+const ContentGridSection = ({ title, contentData }) => {
   return (
-    <ContentSection title="Recommended for you">
+    <ContentSection title={title}>
       <ul className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-10 md:gap-x-7 sm:gap-x-4 gap-y-8 md:gap-y-6 sm:gap-y-4">
-        {recommendedData.map((contentInfo, index) => (
+        {contentData.map((contentInfo, index) => (
           <li key={index}>
             <Content info={contentInfo} />
           </li>
@@ -46,4 +42,4 @@ const Content = ({ info }) => {
   );
 };
 
-export default RecommendedContent;
+export default ContentGridSection;

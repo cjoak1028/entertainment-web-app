@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home.jsx";
 import Movies from "./pages/Movies.jsx";
+import TVSeries from "./pages/TVSeries.jsx";
 
 function App() {
   const [contentData, setContentData] = useState([]);
@@ -38,6 +39,7 @@ function App() {
             path="/movies"
             element={<Movies contentData={contentData} />}
           />
+          <Route path="/tv" element={<TVSeries contentData={contentData} />} />
         </Routes>
       </main>
     </div>
