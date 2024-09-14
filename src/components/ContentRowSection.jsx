@@ -1,17 +1,12 @@
-import { useMemo } from "react";
-import BookmarkButton from "./BookmarkButton.jsx";
-import ContentLabel from "./ContentLabel.jsx";
-import ContentSection from "./ContentSection.jsx";
+import ContentSection from "./ContentSection";
+import BookmarkButton from "./BookmarkButton";
+import ContentLabel from "./ContentLabel";
 
-const TrendingContent = ({ contentData }) => {
-  const trendingData = useMemo(() => {
-    return contentData?.filter((content) => content.isTrending) || [];
-  }, [contentData]);
-
+const ContentRowSection = ({ title, contentData }) => {
   return (
-    <ContentSection title="Trending">
+    <ContentSection title={title}>
       <ul className="flex flex-row overflow-x-auto gap-10 sm:gap-4 -mr-9 md:-mr-6 sm:-mr-4">
-        {trendingData.map((contentInfo, index) => (
+        {contentData.map((contentInfo, index) => (
           <li key={index}>
             <Content info={contentInfo} />
           </li>
@@ -45,4 +40,4 @@ const Content = ({ info }) => {
   );
 };
 
-export default TrendingContent;
+export default ContentRowSection;
