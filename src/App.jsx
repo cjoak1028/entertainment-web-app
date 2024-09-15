@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
+import Header from "./components/Header/Header.jsx";
 import Home from "./pages/Home.jsx";
 import Movies from "./pages/Movies.jsx";
 import TVSeries from "./pages/TVSeries.jsx";
