@@ -1,23 +1,17 @@
-import { useMemo } from "react";
 import SearchBar from "../components/SearchBar.jsx";
 import ContentGridSection from "../components/ContentGridSection.jsx";
+import useFilteredData from "../hooks/useFilteredData.jsx";
 
 const Bookmarks = ({ contentData }) => {
-  const bookmarkedMoviesData = useMemo(() => {
-    return (
-      contentData?.filter(
-        (content) => content.category === "Movie" && content.isBookmarked
-      ) || []
-    );
-  }, [contentData]);
+  const bookmarkedMoviesData = useFilteredData(contentData, {
+    category: "Movie",
+    isBookmarked: true,
+  });
 
-  const bookmarkedTVData = useMemo(() => {
-    return (
-      contentData?.filter(
-        (content) => content.category === "TV Series" && content.isBookmarked
-      ) || []
-    );
-  }, [contentData]);
+  const bookmarkedTVData = useFilteredData(contentData, {
+    category: "TV Series",
+    isBookmarked: true,
+  });
 
   const BookmarkedMovies = () => {
     return (
