@@ -1,6 +1,7 @@
 import ContentSection from "./ContentSection.jsx";
 import BookmarkButton from "./BookmarkButton.jsx";
 import ContentLabel from "./ContentLabel.jsx";
+import ContentOverlay from "./ContentOverlay.jsx";
 
 const ContentGridSection = ({ title, contentData }) => {
   return (
@@ -20,16 +21,17 @@ const Content = ({ info }) => {
   const { year, category, rating, title, thumbnail } = info;
 
   return (
-    <div>
+    <>
       <div
-        className="h-[10.875rem] p-4 bg-cover bg-center rounded-lg mb-3"
+        className="h-[10.875rem] p-4 bg-cover bg-center rounded-lg mb-3 group relative"
         style={{
           backgroundImage: `url(${thumbnail.regular.large})`,
         }}
       >
-        <div className="flex flex-row justify-end">
+        <div className="flex flex-row justify-end relative z-10">
           <BookmarkButton />
         </div>
+        <ContentOverlay />
       </div>
       <ContentLabel
         isGrid={true}
@@ -38,7 +40,7 @@ const Content = ({ info }) => {
         rating={rating}
         title={title}
       />
-    </div>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 import ContentSection from "./ContentSection";
 import BookmarkButton from "./BookmarkButton";
 import ContentLabel from "./ContentLabel";
+import ContentOverlay from "./ContentOverlay";
 
 const ContentRowSection = ({ title, contentData }) => {
   return (
@@ -21,21 +22,24 @@ const Content = ({ info }) => {
 
   return (
     <div
-      className="w-[29.375rem] sm:w-60 h-[14.375rem] sm:h-[8.75rem] bg-cover bg-center rounded-lg p-6 pt-4 flex flex-col justify-between"
+      className="w-[29.375rem] sm:w-60 h-[14.375rem] sm:h-[8.75rem] bg-cover bg-center rounded-lg p-6 pt-4 flex flex-col justify-between group relative"
       style={{
         backgroundImage: `url(${thumbnail.trending.large})`,
       }}
     >
-      <div className="flex flex-row justify-end">
+      <div className="flex flex-row justify-end relative z-10">
         <BookmarkButton />
       </div>
-      <ContentLabel
-        isGrid={false}
-        year={year}
-        category={category}
-        rating={rating}
-        title={title}
-      />
+      <div className="relative z-0">
+        <ContentLabel
+          isGrid={false}
+          year={year}
+          category={category}
+          rating={rating}
+          title={title}
+        />
+      </div>
+      <ContentOverlay />
     </div>
   );
 };
