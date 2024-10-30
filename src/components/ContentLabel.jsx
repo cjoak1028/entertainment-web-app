@@ -3,7 +3,7 @@ import TvIcon from "/assets/icon-category-tv.svg";
 
 const ContentLabel = ({ year, category, rating, title, isGrid }) => {
   return (
-    <div>
+    <>
       <p
         className={`${
           isGrid ? "body-sm" : "body-md"
@@ -22,7 +22,7 @@ const ContentLabel = ({ year, category, rating, title, isGrid }) => {
         <span>{rating}</span>
       </p>
       <h2 className={`${isGrid ? "heading-xs" : "heading-sm"}`}>{title}</h2>
-    </div>
+    </>
   );
 };
 
