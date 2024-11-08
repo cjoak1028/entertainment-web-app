@@ -1,8 +1,8 @@
-import MovieIcon from "../assets/icon-category-movie.svg";
-import TvIcon from "../assets/icon-category-tv.svg";
-import DotDivider from "../../../components/ui/DotDivider";
-import BookmarkCatalogItem from "./BookmarkCatalogItem";
-import PlayMedia from "./PlayMedia";
+import MovieIcon from "@/features/catalog/assets/icon-category-movie.svg";
+import TvIcon from "@/features/catalog/assets/icon-category-tv.svg";
+import DotDivider from "@/components/ui/DotDivider";
+import BookmarkCatalogItem from "@/features/catalog/components/BookmarkCatalogItem";
+import PlayMedia from "@/features/catalog/components/PlayMedia";
 
 const CatalogGridView = ({ mediaItems }) => {
   return (
