@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const BookmarkButton = () => {
+const BookmarkCatalogItem = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -31,4 +31,4 @@ const BookmarkButton = () => {
   );
 };
 
-export default BookmarkButton;
+export default BookmarkCatalogItem;
