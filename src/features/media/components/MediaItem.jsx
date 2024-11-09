@@ -1,10 +1,10 @@
-import MovieIcon from "@/features/catalog/assets/icon-category-movie.svg";
-import TvIcon from "@/features/catalog/assets/icon-category-tv.svg";
+import MovieIcon from "@/features/media/assets/icon-category-movie.svg";
+import TvIcon from "@/features/media/assets/icon-category-tv.svg";
 import DotDivider from "@/components/ui/DotDivider";
-import BookmarkCatalogItem from "@/features/catalog/components/BookmarkCatalogItem";
-import PlayMedia from "@/features/catalog/components/PlayMedia";
+import BookmarkMedia from "@/features/media/components/BookmarkMedia";
+import PlayMedia from "@/features/media/components/PlayMedia";
 
-const CatalogItem = ({ mediaItem, isGrid }) => {
+const MediaItem = ({ mediaItem, isGrid }) => {
   const { year, category, rating, title, thumbnail } = mediaItem;
 
   return (
@@ -22,7 +22,7 @@ const CatalogItem = ({ mediaItem, isGrid }) => {
         }}
       >
         <div className="flex flex-row justify-end relative z-10">
-          <BookmarkCatalogItem />
+          <BookmarkMedia />
         </div>
         {!isGrid && (
           <div className="relative z-0">
@@ -71,4 +71,4 @@ const CatalogItem = ({ mediaItem, isGrid }) => {
   );
 };
 
-export default CatalogItem;
+export default MediaItem;
