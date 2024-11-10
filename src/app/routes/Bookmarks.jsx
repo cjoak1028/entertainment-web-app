@@ -26,12 +26,12 @@ const BookmarksPage = () => {
       <MediaList
         categoryTitle="Bookmarked Movies"
         mediaItems={bookmarkedMovies}
-        isGrid={true}
+        isTrending={false}
       />
       <MediaList
         categoryTitle="Bookmarked TV Series"
         mediaItems={bookmarkedTV}
-        isGrid={true}
+        isTrending={false}
       />
     </SearchMedia>
   );

@@ -19,7 +19,7 @@ const TVPage = () => {
       <MediaList
         categoryTitle="TV Series"
         mediaItems={TVSeries}
-        isGrid={true}
+        isTrending={false}
       />
     </SearchMedia>
   );

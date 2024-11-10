@@ -17,7 +17,11 @@ const MoviesPage = () => {
 
   return (
     <SearchMedia>
-      <MediaList categoryTitle="Movies" mediaItems={movies} isGrid={true} />
+      <MediaList
+        categoryTitle="Movies"
+        mediaItems={movies}
+        isTrending={false}
+      />
     </SearchMedia>
   );
 };

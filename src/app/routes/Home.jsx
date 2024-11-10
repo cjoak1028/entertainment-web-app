@@ -26,12 +26,12 @@ const HomePage = () => {
       <MediaList
         categoryTitle="Trending"
         mediaItems={trendingContents}
-        isGrid={false}
+        isTrending={true}
       />
       <MediaList
         categoryTitle="Recommended for you"
         mediaItems={recommendedContents}
-        isGrid={true}
+        isTrending={false}
       />
     </SearchMedia>
   );
