@@ -1,30 +1,41 @@
-import MovieIcon from "@/features/catalog/assets/icon-category-movie.svg";
-import TvIcon from "@/features/catalog/assets/icon-category-tv.svg";
+import MovieIcon from "@/features/media/assets/icon-category-movie.svg";
+import TvIcon from "@/features/media/assets/icon-category-tv.svg";
 import DotDivider from "@/components/ui/DotDivider";
-import BookmarkCatalogItem from "@/features/catalog/components/BookmarkCatalogItem";
-import PlayMedia from "@/features/catalog/components/PlayMedia";
+import BookmarkMedia from "@/features/media/components/BookmarkMedia";
+import PlayMedia from "@/features/media/components/PlayMedia";
 
-const CatalogItem = ({ mediaItem, isGrid }) => {
+const MediaItem = ({ mediaItem, isTrending }) => {
   const { year, category, rating, title, thumbnail } = mediaItem;
+
+  const getBgImg = () => {
+    const smScreen = window.matchMedia("(max-width: 640px)").matches;
+    const mdScreen = window.matchMedia("(max-width: 960px)").matches;
+
+    if (isTrending) {
+      return smScreen ? thumbnail.trending.small : thumbnail.trending.large;
+    } else {
+      if (smScreen) return thumbnail.regular.small;
+      if (mdScreen) return thumbnail.regular.medium;
+      return thumbnail.regular.large;
+    }
+  };
 
   return (
     <>
       <div
         className={`p-4 bg-cover bg-center rounded-lg mb-3 group relative ${
-          isGrid
-            ? "h-[10.875rem]"
-            : "w-[29.375rem] sm:w-60 h-[14.375rem] sm:h-[8.75rem] flex flex-col justify-between"
+          isTrending
+            ? "w-[29.375rem] sm:w-60 h-[14.375rem] sm:h-[8.75rem] flex flex-col justify-between"
+            : "h-[10.875rem]"
         }`}
         style={{
-          backgroundImage: `url(${
-            isGrid ? thumbnail.regular.large : thumbnail.trending.large
-          })`,
+          backgroundImage: `url(${getBgImg()})`,
         }}
       >
         <div className="flex flex-row justify-end relative z-10">
-          <BookmarkCatalogItem />
+          <BookmarkMedia />
         </div>
-        {!isGrid && (
+        {isTrending && (
           <div className="relative z-0">
             <div>
               <p className="body-md opacity-75 mb-3 sm:mb-2 flex">
@@ -49,7 +60,7 @@ const CatalogItem = ({ mediaItem, isGrid }) => {
           <PlayMedia />
         </div>
       </div>
-      {isGrid && (
+      {!isTrending && (
         <div>
           <p className="body-sm opacity-75 mb-3 sm:mb-2 flex">
             <span>{year}</span>
@@ -71,4 +82,4 @@ const CatalogItem = ({ mediaItem, isGrid }) => {
   );
 };
 
-export default CatalogItem;
+export default MediaItem;
