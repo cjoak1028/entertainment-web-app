@@ -1,10 +1,10 @@
-import MovieIcon from "@/features/media/assets/icon-category-movie.svg";
-import TvIcon from "@/features/media/assets/icon-category-tv.svg";
+import MovieIcon from "@/features/catalog/assets/icon-category-movie.svg";
+import TvIcon from "@/features/catalog/assets/icon-category-tv.svg";
 import DotDivider from "@/components/ui/DotDivider";
-import BookmarkMedia from "@/features/media/components/BookmarkMedia";
-import PlayMedia from "@/features/media/components/PlayMedia";
+import BookmarkCatalogItem from "@/features/catalog/components/BookmarkCatalogItem";
+import PlayCatalogItem from "@/features/catalog/components/PlayCatalogItem";
 
-const MediaItem = ({ mediaItem, isTrending }) => {
+const CatalogItem = ({ mediaItem, isTrending }) => {
   const { year, category, rating, title, thumbnail } = mediaItem;
 
   const getBgImg = () => {
@@ -33,7 +33,7 @@ const MediaItem = ({ mediaItem, isTrending }) => {
         }}
       >
         <div className="flex flex-row justify-end relative z-10">
-          <BookmarkMedia />
+          <BookmarkCatalogItem />
         </div>
         {isTrending && (
           <div className="relative z-0">
@@ -57,7 +57,7 @@ const MediaItem = ({ mediaItem, isTrending }) => {
         )}
 
         <div className="absolute group-hover:flex hidden justify-center items-center h-full w-full bg-black/50 left-0 top-0 z-5">
-          <PlayMedia />
+          <PlayCatalogItem />
         </div>
       </div>
       {!isTrending && (
@@ -82,4 +82,4 @@ const MediaItem = ({ mediaItem, isTrending }) => {
   );
 };
 
-export default MediaItem;
+export default CatalogItem;

@@ -1,6 +1,6 @@
-import searchIcon from "@/features/media/assets/icon-search.svg";
+import searchIcon from "@/features/catalog/assets/icon-search.svg";
 
-const SearchMedia = ({ children }) => {
+const SearchCatalog = ({ children }) => {
   return (
     <div>
       <div
@@ -26,4 +26,4 @@ const SearchMedia = ({ children }) => {
   );
 };
 
-export default SearchMedia;
+export default SearchCatalog;

@@ -1,16 +1,14 @@
+import axios from "axios";
+
+const apiUrl = import.meta.env.VITE_API_URL;
+
 export const getContents = async () => {
   try {
-    const response = await fetch("/data.json");
-
-    if (!response.ok) {
-      throw new Error(`Reponse status: ${response.status}`);
-    }
-
-    const data = await response.json();
-
-    return data;
-  } catch (error) {
-    console.error(error);
+    const res = await axios.get(`${apiUrl}/catalog`);
+    console.log(res.data);
+    return res.data;
+  } catch (err) {
+    console.error(err);
   }
 };
 

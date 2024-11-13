@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import SearchMedia from "@/features/media/components/SearchMedia.jsx";
-import MediaList from "@/features/media/components/MediaList.jsx";
-import { getTVSeries } from "@/features/media/api/get-contents.js";
+import SearchCatalog from "@/features/catalog/components/SearchCatalog.jsx";
+import CatalogList from "@/features/catalog/components/CatalogList.jsx";
+import { getTVSeries } from "@/features/catalog/api/get-contents.js";
 
 const TVPage = () => {
   const [TVSeries, setTVSeries] = useState([]);
@@ -15,13 +15,13 @@ const TVPage = () => {
     fetchMovies();
   }, []);
   return (
-    <SearchMedia>
-      <MediaList
+    <SearchCatalog>
+      <CatalogList
         categoryTitle="TV Series"
         mediaItems={TVSeries}
         isTrending={false}
       />
-    </SearchMedia>
+    </SearchCatalog>
   );
 };
 

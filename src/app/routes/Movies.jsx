@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import SearchMedia from "@/features/media/components/SearchMedia.jsx";
-import MediaList from "@/features/media/components/MediaList.jsx";
-import { getMovies } from "@/features/media/api/get-contents.js";
+import SearchCatalog from "@/features/catalog/components/SearchCatalog.jsx";
+import CatalogList from "@/features/catalog/components/CatalogList.jsx";
+import { getMovies } from "@/features/catalog/api/get-contents.js";
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
@@ -16,13 +16,13 @@ const MoviesPage = () => {
   }, []);
 
   return (
-    <SearchMedia>
-      <MediaList
+    <SearchCatalog>
+      <CatalogList
         categoryTitle="Movies"
         mediaItems={movies}
         isTrending={false}
       />
-    </SearchMedia>
+    </SearchCatalog>
   );
 };
 

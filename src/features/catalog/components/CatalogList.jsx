@@ -1,6 +1,6 @@
-import MediaItem from "@/features/media/components/MediaItem";
+import CatalogItem from "@/features/catalog/components/CatalogItem";
 
-const MediaList = ({ categoryTitle, mediaItems, isTrending }) => {
+const CatalogList = ({ categoryTitle, mediaItems, isTrending }) => {
   return (
     <section className="px-9 md:px-6 sm:px-4 py-5 sm:py-3">
       <h2 className="heading-lg mb-8 sm:mb-4">{categoryTitle}</h2>
@@ -13,7 +13,7 @@ const MediaList = ({ categoryTitle, mediaItems, isTrending }) => {
       >
         {mediaItems.map((item, index) => (
           <li key={index}>
-            <MediaItem mediaItem={item} isTrending={isTrending} />
+            <CatalogItem mediaItem={item} isTrending={isTrending} />
           </li>
         ))}
       </ul>
@@ -21,4 +21,4 @@ const MediaList = ({ categoryTitle, mediaItems, isTrending }) => {
   );
 };
 
-export default MediaList;
+export default CatalogList;
