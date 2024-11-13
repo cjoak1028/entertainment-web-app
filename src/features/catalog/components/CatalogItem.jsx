@@ -4,8 +4,8 @@ import DotDivider from "@/components/ui/DotDivider";
 import BookmarkCatalogItem from "@/features/catalog/components/BookmarkCatalogItem";
 import PlayCatalogItem from "@/features/catalog/components/PlayCatalogItem";
 
-const CatalogItem = ({ mediaItem, isTrending }) => {
-  const { year, category, rating, title, thumbnail } = mediaItem;
+const CatalogItem = ({ catalogItem, isTrending }) => {
+  const { year, category, rating, title, thumbnail } = catalogItem;
 
   const getBgImg = () => {
     const smScreen = window.matchMedia("(max-width: 640px)").matches;

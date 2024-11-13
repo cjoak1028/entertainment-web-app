@@ -18,7 +18,7 @@ const TVPage = () => {
     <SearchCatalog>
       <CatalogList
         categoryTitle="TV Series"
-        mediaItems={TVSeries}
+        catalogItems={TVSeries}
         isTrending={false}
       />
     </SearchCatalog>

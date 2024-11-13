@@ -25,12 +25,12 @@ const HomePage = () => {
     <SearchCatalog>
       <CatalogList
         categoryTitle="Trending"
-        mediaItems={trendingContents}
+        catalogItems={trendingContents}
         isTrending={true}
       />
       <CatalogList
         categoryTitle="Recommended for you"
-        mediaItems={recommendedContents}
+        catalogItems={recommendedContents}
         isTrending={false}
       />
     </SearchCatalog>

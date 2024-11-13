@@ -19,7 +19,7 @@ const MoviesPage = () => {
     <SearchCatalog>
       <CatalogList
         categoryTitle="Movies"
-        mediaItems={movies}
+        catalogItems={movies}
         isTrending={false}
       />
     </SearchCatalog>

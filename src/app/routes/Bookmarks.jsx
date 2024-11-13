@@ -25,12 +25,12 @@ const BookmarksPage = () => {
     <SearchCatalog>
       <CatalogList
         categoryTitle="Bookmarked Movies"
-        mediaItems={bookmarkedMovies}
+        catalogItems={bookmarkedMovies}
         isTrending={false}
       />
       <CatalogList
         categoryTitle="Bookmarked TV Series"
-        mediaItems={bookmarkedTV}
+        catalogItems={bookmarkedTV}
         isTrending={false}
       />
     </SearchCatalog>
