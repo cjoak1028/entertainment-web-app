@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { postBookmark } from "@/features/catalog/api/post-bookmark.js";
 
-const BookmarkCatalogItem = () => {
+const BookmarkCatalogItem = ({ contentId }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -11,6 +12,11 @@ const BookmarkCatalogItem = () => {
     setIsHovered(false);
   };
 
+  const bookmarkContent = async () => {
+    const res = await postBookmark(contentId);
+    console.log(res);
+  };
+
   return (
     <div
       className={` rounded-full w-8 h-8 flex justify-center items-center cursor-pointer ${
@@ -18,6 +24,7 @@ const BookmarkCatalogItem = () => {
       }`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={bookmarkContent}
     >
       <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
         <path

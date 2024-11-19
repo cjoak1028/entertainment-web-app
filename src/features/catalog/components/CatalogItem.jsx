@@ -5,7 +5,7 @@ import BookmarkCatalogItem from "@/features/catalog/components/BookmarkCatalogIt
 import PlayCatalogItem from "@/features/catalog/components/PlayCatalogItem";
 
 const CatalogItem = ({ catalogItem, isTrending }) => {
-  const { year, category, rating, title, thumbnail } = catalogItem;
+  const { year, category, rating, title, thumbnail, _id } = catalogItem;
 
   const getBgImg = () => {
     const smScreen = window.matchMedia("(max-width: 640px)").matches;
@@ -33,7 +33,7 @@ const CatalogItem = ({ catalogItem, isTrending }) => {
         }}
       >
         <div className="flex flex-row justify-end relative z-10">
-          <BookmarkCatalogItem />
+          <BookmarkCatalogItem contentId={_id} />
         </div>
         {isTrending && (
           <div className="relative z-0">
