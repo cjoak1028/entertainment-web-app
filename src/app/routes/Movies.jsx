@@ -1,19 +1,16 @@
 import { useState, useEffect } from "react";
 import SearchCatalog from "@/features/catalog/components/SearchCatalog.jsx";
 import CatalogList from "@/features/catalog/components/CatalogList.jsx";
-import { getMovies } from "@/features/catalog/api/get-contents.js";
 
-const MoviesPage = () => {
+const MoviesPage = ({ contents }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      const movies = await getMovies();
-      setMovies(movies || []);
-    };
+    const movies = contents.filter((item) => item.category === "Movie");
+    setMovies(movies);
+  }, [contents]);
 
-    fetchMovies();
-  }, []);
+  // TODO: Create custom hook ??
 
   return (
     <SearchCatalog>

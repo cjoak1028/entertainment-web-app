@@ -11,42 +11,6 @@ export const getContents = async () => {
   }
 };
 
-export const getTrendingContents = async () => {
-  try {
-    const contents = await getContents();
-    return contents.filter((content) => content.isTrending);
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-export const getRecommendedContents = async () => {
-  try {
-    const contents = await getContents();
-    return contents.filter((content) => !content.isTrending);
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-export const getMovies = async () => {
-  try {
-    const contents = await getContents();
-    return contents.filter((content) => content.category === "Movie");
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-export const getTVSeries = async () => {
-  try {
-    const contents = await getContents();
-    return contents.filter((content) => content.category === "TV Series");
-  } catch (error) {
-    console.error(error);
-  }
-};
-
 export const getBookmarkedMovies = async () => {
   try {
     const contents = await getContents();

@@ -1,24 +1,19 @@
 import { useState, useEffect } from "react";
 import SearchCatalog from "@/features/catalog/components/SearchCatalog.jsx";
 import CatalogList from "@/features/catalog/components/CatalogList.jsx";
-import { getTVSeries } from "@/features/catalog/api/get-contents.js";
 
-const TVPage = () => {
-  const [TVSeries, setTVSeries] = useState([]);
+const TVPage = ({ contents }) => {
+  const [tvSeries, setTVSeries] = useState([]);
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      const TVSeries = await getTVSeries();
-      setTVSeries(TVSeries || []);
-    };
-
-    fetchMovies();
-  }, []);
+    const tvSeries = contents.filter((item) => item.category === "TV Series");
+    setTVSeries(tvSeries);
+  }, [contents]);
   return (
     <SearchCatalog>
       <CatalogList
         categoryTitle="TV Series"
-        catalogItems={TVSeries}
+        catalogItems={tvSeries}
         isTrending={false}
       />
     </SearchCatalog>

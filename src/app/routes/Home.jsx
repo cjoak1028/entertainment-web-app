@@ -1,25 +1,27 @@
 import { useState, useEffect } from "react";
 import SearchCatalog from "@/features/catalog/components/SearchCatalog.jsx";
 import CatalogList from "@/features/catalog/components/CatalogList.jsx";
-import {
-  getTrendingContents,
-  getRecommendedContents,
-} from "@/features/catalog/api/get-contents.js";
 
-const HomePage = () => {
+const HomePage = ({ contents }) => {
   const [trendingContents, setTrendingContents] = useState([]);
   const [recommendedContents, setRecommendedContents] = useState([]);
 
   useEffect(() => {
-    const fetchContents = async () => {
-      const trendingContents = await getTrendingContents();
-      const recommendedContents = await getRecommendedContents();
-      setTrendingContents(trendingContents || []);
-      setRecommendedContents(recommendedContents || []);
-    };
+    const { trendingContents, recommendedContents } = contents.reduce(
+      (acc, item) => {
+        if (item.isTrending) {
+          acc.trendingContents.push(item);
+        } else {
+          acc.recommendedContents.push(item);
+        }
+        return acc;
+      },
+      { trendingContents: [], recommendedContents: [] }
+    );
 
-    fetchContents();
-  }, []);
+    setTrendingContents(trendingContents);
+    setRecommendedContents(recommendedContents);
+  }, [contents]);
 
   return (
     <SearchCatalog>
