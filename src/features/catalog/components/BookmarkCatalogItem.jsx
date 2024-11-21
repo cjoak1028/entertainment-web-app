@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { postBookmarks } from "@/features/catalog/api/post-bookmarks.js";
+import { deleteBookmark } from "@/features/catalog/api/delete-bookmarks.js";
 
 const BookmarkCatalogItem = ({ contentId }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isBookmarked, setIsBookmarked] = useState(false);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -12,9 +14,18 @@ const BookmarkCatalogItem = ({ contentId }) => {
     setIsHovered(false);
   };
 
-  const bookmarkContent = async () => {
-    const res = await postBookmarks(contentId);
-    console.log(res);
+  const handleBookmark = async () => {
+    try {
+      if (isBookmarked) {
+        await deleteBookmark(contentId);
+      } else {
+        await postBookmarks(contentId);
+      }
+      // Only update state if the operation succeeds
+      setIsBookmarked(!isBookmarked);
+    } catch (err) {
+      console.error("Failed to update bookmark:", err);
+    }
   };
 
   return (
@@ -24,11 +35,13 @@ const BookmarkCatalogItem = ({ contentId }) => {
       }`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onClick={bookmarkContent}
+      onClick={handleBookmark}
     >
       <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
         <path
-          className={` ${isHovered ? "stroke-surface" : "stroke-on-container"}`}
+          className={`${isHovered ? "stroke-surface" : "stroke-on-container"} ${
+            isBookmarked && "fill-on-container"
+          }`}
           d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"
           strokeWidth="1.5"
           fill="none"
