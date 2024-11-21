@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { postBookmark } from "@/features/catalog/api/post-bookmark.js";
+import { postBookmarks } from "@/features/catalog/api/post-bookmarks.js";
 
 const BookmarkCatalogItem = ({ contentId }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -13,7 +13,7 @@ const BookmarkCatalogItem = ({ contentId }) => {
   };
 
   const bookmarkContent = async () => {
-    const res = await postBookmark(contentId);
+    const res = await postBookmarks(contentId);
     console.log(res);
   };
 
