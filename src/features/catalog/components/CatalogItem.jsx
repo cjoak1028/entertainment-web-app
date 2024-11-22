@@ -4,7 +4,7 @@ import DotDivider from "@/components/ui/DotDivider";
 import BookmarkCatalogItem from "@/features/catalog/components/BookmarkCatalogItem";
 import PlayCatalogItem from "@/features/catalog/components/PlayCatalogItem";
 
-const CatalogItem = ({ catalogItem, isTrending }) => {
+const CatalogItem = ({ catalogItem, isTrending, isBookmarked }) => {
   const { year, category, rating, title, thumbnail, _id } = catalogItem;
 
   const getBgImg = () => {
@@ -33,7 +33,10 @@ const CatalogItem = ({ catalogItem, isTrending }) => {
         }}
       >
         <div className="flex flex-row justify-end relative z-10">
-          <BookmarkCatalogItem contentId={_id} />
+          <BookmarkCatalogItem
+            contentId={_id}
+            isInitBookmarked={isBookmarked}
+          />
         </div>
         {isTrending && (
           <div className="relative z-0">

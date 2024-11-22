@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { postBookmarks } from "@/features/catalog/api/post-bookmarks.js";
 import { deleteBookmark } from "@/features/catalog/api/delete-bookmarks.js";
 
-const BookmarkCatalogItem = ({ contentId }) => {
+const BookmarkCatalogItem = ({ contentId, isInitBookmarked }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
+
+  useEffect(() => {
+    setIsBookmarked(isInitBookmarked);
+  }, [isInitBookmarked]);
 
   const handleMouseEnter = () => {
     setIsHovered(true);

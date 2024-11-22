@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import SearchCatalog from "@/features/catalog/components/SearchCatalog.jsx";
 import CatalogList from "@/features/catalog/components/CatalogList.jsx";
+import { BookmarksProvider } from "@/contexts/BookmarksContext";
 
 const MoviesPage = ({ contents }) => {
   const [movies, setMovies] = useState([]);
@@ -14,11 +15,13 @@ const MoviesPage = ({ contents }) => {
 
   return (
     <SearchCatalog>
-      <CatalogList
-        categoryTitle="Movies"
-        catalogItems={movies}
-        isTrending={false}
-      />
+      <BookmarksProvider>
+        <CatalogList
+          categoryTitle="Movies"
+          catalogItems={movies}
+          isTrending={false}
+        />
+      </BookmarksProvider>
     </SearchCatalog>
   );
 };

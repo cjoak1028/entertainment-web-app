@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import SearchCatalog from "@/features/catalog/components/SearchCatalog.jsx";
 import CatalogList from "@/features/catalog/components/CatalogList.jsx";
 import { getBookmarks } from "@/features/catalog/api/get-bookmarks.js";
+import { BookmarksProvider } from "@/contexts/BookmarksContext";
 
 const BookmarksPage = ({ contents }) => {
   const [bookmarks, setBookmarks] = useState([]);
@@ -42,20 +43,22 @@ const BookmarksPage = ({ contents }) => {
 
   return (
     <SearchCatalog>
-      {bookmarkedMovies.length > 0 && (
-        <CatalogList
-          categoryTitle="Bookmarked Movies"
-          catalogItems={bookmarkedMovies}
-          isTrending={false}
-        />
-      )}
-      {bookmarkedTV.length > 0 && (
-        <CatalogList
-          categoryTitle="Bookmarked TV Series"
-          catalogItems={bookmarkedTV}
-          isTrending={false}
-        />
-      )}
+      <BookmarksProvider>
+        {bookmarkedMovies.length > 0 && (
+          <CatalogList
+            categoryTitle="Bookmarked Movies"
+            catalogItems={bookmarkedMovies}
+            isTrending={false}
+          />
+        )}
+        {bookmarkedTV.length > 0 && (
+          <CatalogList
+            categoryTitle="Bookmarked TV Series"
+            catalogItems={bookmarkedTV}
+            isTrending={false}
+          />
+        )}
+      </BookmarksProvider>
     </SearchCatalog>
   );
 };

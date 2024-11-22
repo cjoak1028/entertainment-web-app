@@ -1,6 +1,13 @@
 import CatalogItem from "@/features/catalog/components/CatalogItem";
+import { useBookmarks } from "@/contexts/BookmarksContext";
 
 const CatalogList = ({ categoryTitle, catalogItems, isTrending }) => {
+  const { bookmarks } = useBookmarks();
+
+  const isBookmarked = (contentId) => {
+    return bookmarks.has(contentId);
+  };
+
   return (
     <section className="px-9 md:px-6 sm:px-4 py-5 sm:py-3">
       <h2 className="heading-lg mb-8 sm:mb-4">{categoryTitle}</h2>
@@ -13,7 +20,11 @@ const CatalogList = ({ categoryTitle, catalogItems, isTrending }) => {
       >
         {catalogItems.map((item, index) => (
           <li key={index}>
-            <CatalogItem catalogItem={item} isTrending={isTrending} />
+            <CatalogItem
+              catalogItem={item}
+              isTrending={isTrending}
+              isBookmarked={isBookmarked(item._id)}
+            />
           </li>
         ))}
       </ul>

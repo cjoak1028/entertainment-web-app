@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import SearchCatalog from "@/features/catalog/components/SearchCatalog.jsx";
 import CatalogList from "@/features/catalog/components/CatalogList.jsx";
+import { BookmarksProvider } from "@/contexts/BookmarksContext";
 
 const HomePage = ({ contents }) => {
   const [trendingContents, setTrendingContents] = useState([]);
@@ -25,16 +26,18 @@ const HomePage = ({ contents }) => {
 
   return (
     <SearchCatalog>
-      <CatalogList
-        categoryTitle="Trending"
-        catalogItems={trendingContents}
-        isTrending={true}
-      />
-      <CatalogList
-        categoryTitle="Recommended for you"
-        catalogItems={recommendedContents}
-        isTrending={false}
-      />
+      <BookmarksProvider>
+        <CatalogList
+          categoryTitle="Trending"
+          catalogItems={trendingContents}
+          isTrending={true}
+        />
+        <CatalogList
+          categoryTitle="Recommended for you"
+          catalogItems={recommendedContents}
+          isTrending={false}
+        />
+      </BookmarksProvider>
     </SearchCatalog>
   );
 };
